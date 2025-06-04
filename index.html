@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulario con Validaciones</title>
+  <link rel="stylesheet" href="./_css/index.css" />
+</head>
+<body>
+<div class="container">
+<h1>🎨 Formulario de Registro</h1>
+  <form id="miFormulario">
+    <div class="form-group">
+      <label for="imagen">Nombres:</label>
+      <input type="search" id="imagen" name="imagen" accept="image/*" required />
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo" required />
+    </div>
+
+    <div class="form-group">
+      <label for="clave">Contraseña (mínimo 8, 1 número y 1 mayúscula):</label>
+      <input type="password" id="clave" name="clave"
+        pattern="(?=.*\d)(?=.*[A-Z]).{8,}"
+        title="Debe tener al menos 8 caracteres, una letra mayúscula y un número" required />
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono (10 dígitos):</label>
+      <input type="tel" id="telefono" name="telefono"
+        pattern="[0-9]{10}" title="Debe contener 10 dígitos numéricos" required />
+    </div>
+
+    <div class="form-group">
+      <label for="color">Color favorito:</label>
+      <input type="color" id="color" name="color" />
+    </div>
+
+    <div class="form-group">
+      <label for="edad">Edad (entre 18 y 99):</label>
+      <input type="number" id="edad" name="edad" min="18" max="99" required />
+    </div>
+
+    <div class="form-group">
+      <label for="fecha">Fecha de nacimiento:</label>
+      <input type="date" id="fecha" name="fecha" required />
+    </div>
+
+    <div class="form-group">
+      <label for="rango">Nivel de satisfacción:</label>
+      <input type="range" id="rango" name="rango" min="0" max="10" />
+    </div>
+
+    <div class="form-group">
+      <label>
+        <input type="checkbox" id="terminos" required />
+        Acepto los términos y condiciones
+      </label>
+    </div>
+
+<div class="form-group">
+  <label for="submitImage">Enviar con imagen:</label><br />
+  <input 
+    type="image"
+    src="data:image/png;base64,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"
+    alt="Enviar"
+    id="submitImage"
+    title="Enviar formulario" />
+</div>
+  <script src="./_js/index.js"></script>
+</body>
+</html>
