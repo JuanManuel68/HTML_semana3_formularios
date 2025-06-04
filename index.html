@@ -12,18 +12,18 @@
   <form id="miFormulario">
     <div class="form-group">
       <label for="imagen">Nombres:</label>
-      <input type="search" id="imagen" name="imagen" accept="image/*" required />
+      <input type="search" id="imagen" name="imagen" accept="image/*" required pattern="[A-Za-z ]{3,40}"/>
     </div>
 
     <div class="form-group">
       <label for="correo">Correo electrónico:</label>
-      <input type="email" id="correo" name="correo" required />
+      <input type="email" id="correo" name="correo" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,50}$" />
     </div>
 
     <div class="form-group">
       <label for="clave">Contraseña (mínimo 8, 1 número y 1 mayúscula):</label>
       <input type="password" id="clave" name="clave"
-        pattern="(?=.*\d)(?=.*[A-Z]).{8,}"
+        pattern="(?=.*\d)(?=.*[A-Z]).{8,16}"
         title="Debe tener al menos 8 caracteres, una letra mayúscula y un número" required />
     </div>
 
